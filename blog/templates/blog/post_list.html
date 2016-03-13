@@ -10,9 +10,13 @@
       <h2>Blog vytvoreny na Django Girls</h2>
     </div>
     <div>
-      <p>Ahoj!</p>
-      <p><em>Funguje to!</em></p>
-      
+      {% for post in posts %}
+        <div>
+          <p>published: {{ post.published_date }}</p>
+          <h1><a href="">{{ post.title }}</a></h1>
+          <p>{{ post.text|linebreaks }}</p>
+        </div>
+      {% endfor %}
     </div>
   </body>
 </html>
